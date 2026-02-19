@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Baby Pink Design System */
+    --background: 340 30% 98%;
+    --foreground: 340 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 340 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 25% 15%;
+
+    /* Primary: Rose Pink */
+    --primary: 338 75% 70%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Soft Blush */
+    --secondary: 340 50% 94%;
+    --secondary-foreground: 338 50% 45%;
+
+    --muted: 340 30% 95%;
+    --muted-foreground: 340 15% 55%;
+
+    --accent: 320 60% 88%;
+    --accent-foreground: 320 40% 35%;
+
+    --destructive: 0 72% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 30% 88%;
+    --input: 340 30% 92%;
+    --ring: 338 75% 70%;
+
+    --radius: 0.875rem;
+
+    /* Custom Pink Tokens */
+    --pink-50: 340 100% 98%;
+    --pink-100: 340 80% 95%;
+    --pink-200: 338 75% 89%;
+    --pink-300: 338 70% 80%;
+    --pink-400: 338 72% 72%;
+    --pink-500: 338 75% 65%;
+    --pink-600: 338 65% 55%;
+    --pink-700: 338 60% 45%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(338 75% 70%) 0%, hsl(320 70% 75%) 50%, hsl(300 60% 80%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(340 60% 98%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(340 50% 97%) 0%, hsl(0 0% 100%) 100%);
+    --gradient-sidebar: linear-gradient(180deg, hsl(338 75% 68%) 0%, hsl(320 65% 72%) 100%);
+
+    --shadow-sm: 0 1px 3px hsl(338 50% 70% / 0.15);
+    --shadow-md: 0 4px 12px hsl(338 50% 70% / 0.2);
+    --shadow-lg: 0 8px 24px hsl(338 50% 70% / 0.25);
+    --shadow-pink: 0 4px 20px hsl(338 75% 70% / 0.35);
+
+    --sidebar-background: 338 75% 68%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 338 75% 50%;
+    --sidebar-accent: 338 60% 60%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 338 50% 60%;
+    --sidebar-ring: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 340 25% 8%;
+    --foreground: 340 20% 92%;
+
+    --card: 340 22% 12%;
+    --card-foreground: 340 20% 92%;
+
+    --popover: 340 22% 12%;
+    --popover-foreground: 340 20% 92%;
+
+    --primary: 338 70% 72%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 340 25% 18%;
+    --secondary-foreground: 338 60% 80%;
+
+    --muted: 340 22% 16%;
+    --muted-foreground: 340 15% 60%;
+
+    --accent: 320 40% 22%;
+    --accent-foreground: 320 60% 85%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 25% 20%;
+    --input: 340 25% 16%;
+    --ring: 338 70% 72%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(338 60% 50%) 0%, hsl(320 55% 45%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(340 22% 13%) 0%, hsl(320 20% 16%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(340 25% 9%) 0%, hsl(340 22% 12%) 100%);
+    --gradient-sidebar: linear-gradient(180deg, hsl(338 55% 30%) 0%, hsl(320 50% 25%) 100%);
+
+    --sidebar-background: 338 45% 20%;
+    --sidebar-foreground: 340 20% 92%;
+    --sidebar-primary: 338 65% 70%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 338 35% 28%;
+    --sidebar-accent-foreground: 340 20% 92%;
+    --sidebar-border: 338 30% 25%;
+    --sidebar-ring: 338 65% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  .gradient-soft {
+    background: var(--gradient-soft);
+  }
+  .gradient-sidebar {
+    background: var(--gradient-sidebar);
+  }
+  .shadow-pink {
+    box-shadow: var(--shadow-pink);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-md);
+  }
+  
+  /* Scrollbar styling */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.4);
+    border-radius: 10px;
+  }
+
+  /* Glass morphism */
+  .glass {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  /* Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* Priority indicators */
+  .priority-low { color: hsl(142 60% 45%); }
+  .priority-medium { color: hsl(40 90% 50%); }
+  .priority-high { color: hsl(25 90% 55%); }
+  .priority-urgent { color: hsl(0 72% 60%); }
+
+  .priority-bg-low { background: hsl(142 60% 45% / 0.12); }
+  .priority-bg-medium { background: hsl(40 90% 50% / 0.12); }
+  .priority-bg-high { background: hsl(25 90% 55% / 0.12); }
+  .priority-bg-urgent { background: hsl(0 72% 60% / 0.12); }
+}
